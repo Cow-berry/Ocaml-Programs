@@ -1,0 +1,23 @@
+let min a b =  if a < b then a else b;;
+let max a b = if a > b then a else b;;
+let min3 a b c = min (min a b) c;;
+let max3 a b c = max (max a b) c;;
+let min4 a b c d = min (min3 a b c) d;;
+let avg a b c = (a+b+c)/3;;
+let med3 a b c =  min(max a b) c;;
+let med4 a b c d = min4 (max3 a b c) (max3 a b d) (max3 a c d) (max3 b c d);;
+print_string "min 6 27 = ";;
+print_int (min 6 27);;
+print_string ";\nmax 6 27  = ";;
+print_int (max 5 27);;
+print_string ";\nmin3 3 4 19 = ";;
+print_int (min3 3 4 19);;
+print_string ";\nmax3 3 4 19 = ";;
+print_int (max3 3 4 19);;
+print_string ";\navg 13 14 25 = ";;
+print_int (avg 13 14 25);;
+print_string ";\nmed3 14 25 8 = ";;
+print_int (med3 14 25 8);;
+print_string ";\nmed4 3 8 9 5 = ";;
+print_int (med4 3 8 9 5);;
+print_string ";\n"

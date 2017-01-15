@@ -1,0 +1,15 @@
+let max a b = if a >= b then a else b;;
+let min a b = if a <= b then a else b;;
+let max3 a b c = if a >= c then max a b else max b c;;
+let min3 a b c = if a <= c then min a b else min b c;;
+let med3 a b c = min3 (max a b) (max b c) (max a c);;
+print_string "Введите 3 числа";;
+let x = read_int();;
+let y = read_int();;
+let z = read_int();;
+print_int (max3 x y z);;
+print_string ", ";;
+print_int (med3 x y z);;
+print_string ", ";;
+print_int (min3 x y z);;
+print_string "\n";;
