@@ -1,29 +1,43 @@
 type currency =
   RUB of float|
   USD of float;;
-let course = 63.7167;;
-let read_rub c =
-  match c with
-    _ -> RUB(c);;
+let course = 59.5605;;
+let rub = 10.;;
+let usd = 15.;;
 
-let read_usd c =
-  match c with
-    _ -> USD(c);;
+let print_rub c = Printf.printf "rub : %f \n" c;;
+let print_usd c = Printf.printf "usd : %f \n" c;;
 
-let print_currency c =
-  match c with
-    RUB x -> Printf.printf "Ваш вклад в рублях составляет %f рублей.\n" x
-    |USD x -> Printf.printf "Ваш вклад в долларах состовляет %f доллпров.\n" x;;
-
-(*let in_rub c =
-  Printf.printf "%f долларов = %f рублей" .с (.с*.course);;
+let in_rub c =
+  if (c <= usd && c >= 0.) then (
+    Printf.printf "Вы перевели в рубли %f долларов.\n Сейчас на балансе : \n %f рублей\n %f долларов\n" c (rub +. c *. course) (usd -. c)
+    ) else if c < 0. then (
+      print_string"Вы ввели отрицательное значение перевода.\n"
+    ) else (
+      print_string "У вас на балансе нет столько долларов.\n"
+    );;
 
 let in_usd c =
-  Printf.printf "%f рублей = %f долларов" .с (.с/.course);;*)
+  if (c <= rub && c >= 0.) then (
+    Printf.printf "Вы перевели в доллары %f рублей.\n Сейчас на балансе : \n %f рублей\n %f долларов\n" c (rub -. c) (usd +. c /. course)
+    ) else if c < 0. then (
+      print_string"Вы ввели отрицательное значение перевода.\n"
+    ) else
+    (print_string "У вас на балансе нет столько рублей.\n");;
 
-let rub = read_float;;
-let usd = read_float;;
-let r = read_rub rub;;
-let u = read_usd usd;;
-print_currency r;;
-print_currency u;;
+print_rub rub;;
+print_usd usd;;
+print_string "Сколько вы хотите перевести из долларов в рубли : "
+let c = read_float();;
+in_rub c;;
+if (c <= usd && c >= 0) then (
+  rub = rub +. c *. course;;
+  usd = usd -. c;;
+  );;
+print_string "Сколько вы хотите перевести из рублей в доллары : "
+let c = read_float();;
+in_usd c;;
+if (c <= rub && c >= 0.) then (
+  let rub = rub -. c;;
+  let usd = usd +. c /. course;;
+  );;
