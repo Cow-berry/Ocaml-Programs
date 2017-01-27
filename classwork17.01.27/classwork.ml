@@ -15,6 +15,16 @@
 __________________________
 \                         \
 ___________________________
+
+Алгоритм маркова:
+1^ -> ^0
+0^ -> .1
+^ -> .1
+*1 ->1*
+*0 ->0*
+1*-> ^0
+0*->.1
+e -< *
 *)
 
 
@@ -30,6 +40,25 @@ let rec length l =
   match l with
     [] -> 0
     |h::t -> 1 + length t;;
+
+let rec (@) a b =
+  match a with
+    [] -> b
+    |h::t -> h::(t @ b);;
+
+let rec reverse l =
+  match l with
+    [] -> []
+    |h::t -> (reverse t) @ [h];; (*милая хрень*)
+
+let rec inc_ a =
+  match a with
+    [] -> [1]
+    | 0::t -> 1::t
+    |1::t -> 0::inc_ t;;
+
+let inc l =
+  reverse(inc_(reverse l));;
 
 let a = [1; 2; 3];;
 print_int(length a);;
