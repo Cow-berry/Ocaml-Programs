@@ -37,22 +37,22 @@ Printf.printf "Элемент %d содержится в списке --- %b\n" 
 (* 1 *)
 let ls = List.sort compare l;;
 let ls2 = List.sort compare l2;;
-print_string "sort (ls) = ";;
+print_string "sort (l) = ";;
 print_list ls;;
-print_string "sort (ls2) = ";;
+print_string "sort (l2) = ";;
 print_list ls2;;
 (* 4 *)
 let rec rm ls =
-	if List.length ls = 1 then ls
-	else match ls with
+ match ls with
 		[] -> []
+		|h::[] -> ls
 		|h1::h2::t ->
 			if h1 = h2 then rm (h2::t)
 			else h1::rm(h2::t);;
 
-print_string "rm (ls)";;
+print_string "rm (ls) = ";;
 print_list (rm ls);;
-print_string "rm (ls2)";;
+print_string "rm (ls2) = ";;
 print_list (rm ls2);;
 (* 6 *)
 let is_equival ls1 ls2=
