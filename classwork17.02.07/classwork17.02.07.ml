@@ -13,12 +13,7 @@ let rec check l e =
 			if h = e then true
 			else check t e;;
 
-let rec nth l i =
-	match l with
-	[] -> failwith "Empty"
-	|h::t ->
-		if i = 0 then h
-		else nth t (i-1);;
+
 
 let print_list l =
 	Printf.printf "[%d" (nth l 0);

@@ -16,19 +16,30 @@ end;
 A|
  V
 *)
-set
-Graphics.open_graph " 700x700";;
-Graphics.moveto 100 100;;
+
+(*Graphics.moveto 100 100;;
 Graphics.lineto 300 300;;
 Graphics.draw_ellipse 100 100 50 100;;
 Graphics.draw_circle 300 300 50;;
 
-type cmd = L|D|R;;
 
-for i = 1 to 50000 do
-  Graphics.draw_circle (Random.int 500) (Random.int 500) (Random.int 50) done;;
+
+
+*)
+
+(* 4 *)
+type cmd = L|D|R;;
+let nAngle n =
+
+
 
 let _ = Graphics.read_key ();;
+
+
+(*
+Компиляция
+"ocamlc graphics.cma x.ml -o x.exe" *)
+
 (*
 дз
 1) 500 случайных кружочков
