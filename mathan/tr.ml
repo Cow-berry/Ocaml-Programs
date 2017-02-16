@@ -15,5 +15,6 @@ let rec is_tr l res =
     done
   done; res);;
 
-
+let rec is_tr l =
+  
 Printf.printf"%B\n" (is_tr ro true);;
