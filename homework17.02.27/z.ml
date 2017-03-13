@@ -14,5 +14,3 @@ let is_max r =
       if
     ) r
   ) r;;
-  {
-    
