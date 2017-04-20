@@ -1,0 +1,9 @@
+Чистая функция -- без побочного эффекта
+iter ('a -> unit') -> 'a list -> unit'--- применяет функцию ко всем элементам функции
+map ('a -> 'b) -> 'a list -> 'b List
+  map(fun x = x+1) l
+List.fold_left ('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>
+  List.fold_left ($) 0 [1;3;5;7] = ((((0$1)$3)$5)$7)
+List.for_all
+Симметричное замыкание --- минимальное симметричное замыкание, включающее это отношение
+g jgffgfgfgfgfggfgffgfgfgfgeorgeorgeroefloloimlnyghfjgfskhgvcebykrysvkhvhjhjmbgtrjm
