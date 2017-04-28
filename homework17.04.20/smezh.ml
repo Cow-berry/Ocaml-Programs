@@ -32,7 +32,9 @@ let rec print_line s i =
     print_line s (i-1);
   )
   else print_string"\n";;
-
+(*
+Рисование
+*)
 let draw_row l =
   List.iter (fun x -> if x then Printf.printf "o|" else Printf.printf " |") l;
   print_string "\n";;
@@ -42,5 +44,5 @@ let draw_bool matrix =
 
 let glider = [(0,0);(0,1);(0,2);(1,2);(2,1)];;
 let pintamimo = [(1,6); (2,6); (3,7); (3,5); (4,6);(5,6);(6,6);(7,6);(8,7);(8,5);(9,6);(10,6)];;
-let matrix = gen2 1 10 5 7 pintamimo;;(*в аргументах -- минимальные и максимальные значения по x и y*)
+let matrix = gen2 0 2 0 2 glider;;(*в аргументах -- минимальные и максимальные значения по x и y*)
 draw_bool matrix;;

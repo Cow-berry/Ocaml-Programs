@@ -41,4 +41,4 @@ let rec repeat world n =
 (*
 Тело программы
 *)
-repeat glider 100;;
+repeat pintamimo 100;;
