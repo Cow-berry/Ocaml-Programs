@@ -80,7 +80,14 @@ print_string "\n";
 match brs with
 | [] -> []
 | (shift, Br[])::t ->  get_new_line t (prev)
-| (shift, br)::t -> [(list_distances_rec (list_sizes br) shift prev [])] @ get_new_line t (shift + (size_tree br))
+| (shift, br)::t ->
+        let last_distances = list_distances_rec (list_sizes br) shift prev [] in
+        [
+        last_distances
+        ]
+        @
+        get_new_line t ( List.fold_left (+) prev last_distances)
+;;
 
 let rec observe_tree_rec brs current=
   print_string "current = ";
@@ -103,7 +110,7 @@ let rec observe_tree_rec brs current=
 
 let observe_tree br =
   print_string "Begin Observe\n";
-  let return = observe_tree_rec [(0,br)] [[[((size_tree br +1)/2)]]] in
+  let return = observe_tree_rec [(0,Br[br])] [] in
   print_string "End Observe\n";
   return
   ;;
@@ -157,11 +164,11 @@ let rec print_tree_h br =
   let distances3 = observe_tree br in
   print_distances distances3;;
 
-  (* let br = (Br[Br[Br[];Br[];Br[];Br[]];Br[Br[Br[Br[Br[]];Br[];Br[Br[Br[Br[Br[]];Br[];Br[Br[]]]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]]);; *)
-  let br = (Br[Br[];Br[Br[Br[Br[Br[Br[Br[]]]]]];Br[];Br[];Br[];Br[];Br[]];Br[];Br[Br[];Br[];Br[Br[];Br[];Br[];Br[];Br[];Br[]];Br[];Br[];Br[]];Br[];Br[];Br[];Br[Br[];Br[];Br[];Br[Br[];Br[];Br[];Br[];Br[];Br[]];Br[];Br[]];Br[];Br[]]);;
+  let br = (Br[Br[Br[];Br[];Br[];Br[]];Br[Br[Br[Br[Br[]];Br[];Br[Br[Br[Br[Br[]];Br[];Br[Br[]]]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]]);;
+  (* let br = (Br[Br[];Br[Br[Br[Br[Br[Br[Br[]]]]]];Br[];Br[];Br[];Br[];Br[]];Br[];Br[Br[];Br[];Br[Br[];Br[];Br[];Br[];Br[];Br[]];Br[];Br[];Br[]];Br[];Br[];Br[];Br[Br[];Br[];Br[];Br[Br[];Br[];Br[];Br[];Br[];Br[]];Br[];Br[]];Br[];Br[]]);; *)
 (*        Br[Br[Br[] Br[] Br[] Br[]] Br[Br[] Br[] Br[]] Br[Br[Br[Br[]] Br[] Br[Br[]]]]] *)
  (* print_int_list_list_list (observe_tree br);; *)
-(* let br = Br[Br[Br[Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[];Br[]]];Br[Br[]]];; *)
+(* let br = Br[Br[Br[Br[];Br[Br[]];Br[]]];Br[Br[Br[Br[Br[]]]]]];; *)
 
 (* print_tree_h (Br[Br[Br[];Br[];Br[];Br[]];Br[Br[];Br[];Br[]];Br[Br[Br[];Br[];Br[]]]]);;
 
