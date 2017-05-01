@@ -18,7 +18,7 @@ let rec print_br_list t path =
       print_path path ; print_string"*\n";
       print_br_list t path;;
 
-let br = (Br[Br[Br[];Br[];Br[];Br[Br[Br[Br[Br[]]]]]];Br[Br[Br[Br[Br[]];Br[];Br[Br[Br[Br[Br[]];Br[];Br[Br[]]]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]]);;
+let br = (Br[Br[Br[];Br[];Br[];Br[]];Br[Br[Br[Br[Br[]];Br[];Br[Br[Br[Br[Br[]];Br[];Br[Br[]]]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]]);;
 
 (* print_br (Br[Br[Br[Br[];Br[]];Br[Br[];Br[]]];Br[Br[Br[];Br[]];Br[Br[];Br[]]]]) [];; *)
 (* print_br (Br[Br[Br[];Br[];Br[];Br[]];Br[Br[];Br[];Br[]];Br[Br[Br[];Br[];Br[]]]]) [];; *)
