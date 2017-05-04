@@ -1,14 +1,14 @@
 type br_tree =
   Br of br_tree list;;
+
+type binary_tree =
+  Nil
+  |Node of binary_tree * binary_tree;;
 (*
 Nil -> Br[]
 Node(Nil, Nil) -> Br[Br[];Br[]]
 Node(Node(Nil, Nil), Nil)-> Br[Br[Br[];Br[]];Br[]]
 *)
-type binary_tree =
-  Nil
-  |Node of binary_tree * binary_tree;;
-
 let rec binaryInBr (*(Node(a, b))*) bin =
   match bin with
     Nil -> Br[]
