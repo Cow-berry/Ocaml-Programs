@@ -92,7 +92,7 @@ let rec print_tree_h br =
   let distances3 = observe_tree br in
   print_distances distances3;;
 
-let br = (Br[Br[Br[];Br[];Br[];Br[]];Br[Br[Br[Br[Br[]];Br[];Br[Br[Br[Br[Br[]];Br[];Br[Br[]]]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]]);;
+let br = (Br[Br[Br[];Br[];Br[];Br[Br[Br[Br[];Br[];Br[];Br[]]]]];Br[Br[Br[Br[Br[]];Br[];Br[Br[Br[Br[Br[]];Br[];Br[Br[]]]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]];Br[Br[Br[Br[]];Br[];Br[Br[]]]]]);;
 
 
 print_distances (observe_tree br);;

@@ -1,4 +1,5 @@
-type bin_tree =
+
+bbtype bin_tree =
   Leaf of int
   |Node of bin_tree * bin_tree * int;;
 

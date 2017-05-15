@@ -36,6 +36,14 @@ let rec pkl br =
               pkl br'@
               ;;
 
+let rec klp br =
+  match br with
+    Leaf i ->  [i]
+    |Node(br', br'', i) ->
+              [i]@
+              pkl br'@
+              pkl br''@
+              ;;
 
 let a = Node(Node(Node(Leaf(1), Leaf(2), 7), Leaf(4), 8), Node(Leaf(3), Leaf(5), 9), 6);;
 lkp (a);;
